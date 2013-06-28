@@ -1,21 +1,44 @@
-﻿/**
- * Plugin Name:         WordPress Enhanced Author Dropdown
- * Plugin URI:          http://www.chriscct7.com
- * Description:         Enhance the standard dropdown for authors on posts in WordPress
- * Author:              Chris Christoff
- * Author URI:          http://www.chriscct7.com
- *
- * Contributors:		sunnyratilal, pippinsplugins 
- *
- * Version:             1.0
- * Requires at least:   3.5.0
- * Tested up to:        3.6 Beta 3
- *
- * Text Domain:         wpead
- * Domain Path:         /languages/
- *
- * @category            Plugin
- * @copyright           Copyright © 2013 Chris Christoff
- * @author              Chris Christoff
- * @package             WPEAD
- */
+=== Enhanced Author Dropdown ===
+Contributors: chriscct7, sunnyratilal, pippinsplugins
+Donate link: http://www.chriscct7.com
+Tags: comments, spam
+Requires at least: 3.5
+Tested up to: 3.6 Beta 3
+Stable tag: 1.o
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+Enhance the standard dropdown for authors on posts in WordPress with a customizable select2 dropdown
+
+== Description ==
+
+Enhance the standard dropdown for authors on posts in WordPress with a customizable select2 dropdown
+
+Using the built in settings, you can specify which post types to use Enhanced Author Dropdown for, and which roles to include.
+
+
+== Installation ==
+
+1. Upload and activate the plugin
+2. Configure the settings in plugins->Enhanced Author Dropdown
+
+
+== Frequently Asked Questions ==
+
+= Where can I help contribute =
+
+You can contribute on [Github](https://github.com/chriscct7/WordPress-Enhanced-Author-Dropdown/)
+
+== Screenshots ==
+
+None Yet
+
+== Changelog ==
+
+= 1.0 =
+* Initial Release
+
+== Upgrade Notice ==
+
+= 1.0 =
+Initial Release
