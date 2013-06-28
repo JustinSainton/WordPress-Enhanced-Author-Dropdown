@@ -14,7 +14,7 @@ class EAD_Frontend {
 	 * @return void
 	 */
 	public function __construct() {
-		add_action( 'wp_dropdown_users', array( &$this, 'ead_alter_dropdown_roles' ), 0, 1 );
+		add_action( 'wp_dropdown_users', array( $this, 'ead_alter_dropdown_roles' ), 0, 1 );
 	}
 
 	/**
@@ -27,10 +27,11 @@ class EAD_Frontend {
 	public function ead_alter_dropdown_roles( $output ) {
 		global $post;
 
-		if ( empty($post) ) return false;
+		if ( empty( $post ) ) 
+			return false;
 
 		// Strip out all whitespace
-		$post_type_for_options = preg_replace('/\s*/', '', $post->post_type);
+		$post_type_for_options = preg_replace( '/\s*/', '', $post->post_type );
 
 		// Convert the string to all lowercase
 		$post_type_for_options = strtolower( $post_type_for_options );
@@ -38,15 +39,16 @@ class EAD_Frontend {
 		// Return if we aren't using WPEAD on this post type :(
 		$wpead_options = get_option( 'wpead_options' );
 
-		$use_wpead_for_post_type = 	$wpead_options['wpead_use_for_'.$post_type_for_options];
+		$use_wpead_for_post_type = $wpead_options['wpead_use_for_'.$post_type_for_options];
 
-		if ( ! $use_wpead_for_post_type ) return $output;
+		if ( ! $use_wpead_for_post_type ) 
+			return $output;
 
 		$this->ead_add_select2();
 
 		$args = array(
 			'selected' => $post->post_author,
-			'id' => 'post_author_override',
+			'id'       => 'post_author_override',
 		);
 
 		$output = $this->ead_author_selectbox( $args, $post_type_for_options, $wpead_options );
@@ -87,12 +89,12 @@ class EAD_Frontend {
 			$role_name_for_options = preg_replace('/\s*/', '', $role_name);
 
 			// Convert the string to all lowercase
-			$role_name_for_options = strtolower($role_name_for_options);
+			$role_name_for_options = strtolower( $role_name_for_options );
 
 			$use_wpead_for_role = $wpead_options[ 'wpead_' . $post_type_for_options . '_for_' . $role_name_for_options ];
 
 			if ( $use_wpead_for_role ){
-				array_push( $roles,$role );
+				array_push( $roles, $role );
 			}
 		}
 
@@ -111,7 +113,7 @@ class EAD_Frontend {
 		$author_role = preg_replace('/\s*/', '', $author_role);
 
 		// Convert the string to all lowercase
-		$author_role = strtolower($author_role);
+		$author_role = strtolower( $author_role );
 
 		$isexcluded = $wpead_options[ 'wpead_' . $post_type_for_options . '_for_' . $author_role ];
 
@@ -125,7 +127,8 @@ class EAD_Frontend {
 			$new_args = $user_args;
 			$new_args['role'] = $role;
 			$users = get_users( $new_args );
-			if ( empty( $users ) ) continue;
+			if ( empty( $users ) ) 
+				continue;
 			foreach ( (array) $users as $user ) {
 				$select = selected( $user->ID, $selected, false );
 				$output .= "\t<option value='$user->ID' $select>$user->user_login</option>\n";
