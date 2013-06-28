@@ -6,7 +6,7 @@
  * Author:              Chris Christoff
  * Author URI:          http://www.chriscct7.com
  *
- * Contributors:        sunnyratilal, pippinsplugins
+ * Contributors:		chriscct7, sunnyratilal, pippinsplugins 
  *
  * Version:             1.0
  * Requires at least:   3.5.0
